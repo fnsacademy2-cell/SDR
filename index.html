@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MALC | Single-Dose Rifampicin (SDR) Acceptability Workshop Sindh</title>
+  <meta name="description"
+    content="From Challenges to Solutions: Strengthening the Acceptability and Implementation Of SDR-PEP in Sindh, Pakistan - Marie Adelaide Leprosy Centre">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Chart.js & DataLabels: Local Offline Scripts with CDN Fallback -->
+  <script src="assets/chart.min.js"></script>
+  <script src="assets/chartjs-plugin-datalabels.min.js"></script>
+  <script>
+    if (typeof Chart === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-light landing-active">
+
+  <!-- ========================================================================
+       SLIDE 1: FULL-SCREEN EXECUTIVE LANDING PAGE
+       ======================================================================== -->
+  <section id="landingPage" class="landing-screen">
+    <div class="landing-ambient-glow"></div>
+    <div class="landing-ambient-glow-2"></div>
+
+    <!-- Slide 1 Top Navigation Bar with Interactive Theme Switcher -->
+    <div class="landing-top-bar">
+      <div class="landing-top-brand">
+        <span class="landing-badge-micro">SDR-PEP CLINICAL &amp; COMMUNITY WORKSHOP • SINDH</span>
+      </div>
+
+      <div class="theme-picker-wrapper" id="landingThemePickerWrapper">
+        <button id="landingThemeBtn" class="theme-toggle-trigger" aria-haspopup="true" aria-expanded="false"
+          title="Switch visual presentation theme (Press T to cycle)">
+          <span class="theme-swatch-badge" id="landingThemeSwatch" style="background-color: #2563eb;"></span>
+          <span class="theme-label-group">
+            <span class="theme-sub-hint">Theme:</span>
+            <strong class="theme-title-active" id="landingActiveThemeTitle">Clean Pearl</strong>
+          </span>
+          <svg class="theme-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+
+        <div class="theme-dropdown-menu" id="landingThemeMenu" role="menu" aria-label="Visual Themes">
+          <div class="theme-dropdown-header">
+            <span>Select Presentation Theme</span>
+            <span class="theme-key-hint">Press <strong>T</strong> to cycle</span>
+          </div>
+          <div class="theme-grid-options" id="landingThemeGrid"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-container">
+
+      <!-- Organization Brand Header -->
+      <div class="landing-brand-badge">
+        <div class="landing-logo-box">
+          <img src="assets/malc_logo.png" alt="Marie Adelaide Leprosy Centre Logo" class="landing-logo-img"
+            onerror="this.style.display='none'; document.getElementById('landingLogoFallback').style.display='inline-block';">
+          <span id="landingLogoFallback" class="landing-logo-fallback" style="display:none;">MALC</span>
+        </div>
+        <div class="landing-org-label">MARIE ADELAIDE LEPROSY CENTRE</div>
+      </div>
+
+      <!-- Main Slide 1 Titles (Exact from PPT) -->
+      <div class="landing-hero-content">
+        <div class="landing-slide-num">• EXECUTIVE CLINICAL &amp; FIELD WORKSHOP</div>
+        <h1 class="landing-main-title">Single-Dose Rifampicin (SDR) for Leprosy Prevention</h1>
+        <p class="landing-subtitle">
+          Workshop on: <strong>Understand barriers • Improve counselling • Protect confidentiality</strong>
+        </p>
+        <div style="margin-top: 10px; font-size: 1.15rem; color: var(--accent-blue); font-weight: 700;">
+          From Challenges to Solutions: Strengthening the Acceptability and Implementation Of SDR-PEP in Sindh, Pakistan
+        </div>
+
+        <div class="landing-meta-strip">
+          <div class="landing-meta-pill">
+            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Presenter / Facilitator: <strong>Abdul Salam</strong></span>
+          </div>
+          <div class="landing-meta-pill">
+            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span>Data Evaluation Period: <strong>July 2025 – June 2026</strong></span>
+          </div>
+          <div class="landing-meta-pill">
+            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Coverage: <strong>Karachi &amp; Interior Sindh</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 1 Quick Financial/Epidemiological Teaser Grid -->
+      <div class="landing-kpi-row">
+        <div class="landing-mini-kpi">
+          <span class="l-kpi-label">TOTAL SCREENED</span>
+          <span class="l-kpi-val text-primary">41,771</span>
+          <span class="l-kpi-delta text-success">1,725 Index Cases</span>
+        </div>
+        <div class="landing-mini-kpi">
+          <span class="l-kpi-label">SDR ADMINISTERED</span>
+          <span class="l-kpi-val text-success">24,541</span>
+          <span class="l-kpi-delta text-success">58.8% Overall Acceptance</span>
+        </div>
+        <div class="landing-mini-kpi">
+          <span class="l-kpi-label">TOTAL REFUSALS</span>
+          <span class="l-kpi-val text-danger">7,777</span>
+          <span class="l-kpi-delta text-danger">Karachi 99% of Refusals</span>
+        </div>
+        <div class="landing-mini-kpi">
+          <span class="l-kpi-label">LEPROSY SUSPECTS</span>
+          <span class="l-kpi-val text-warning">109 Cases</span>
+          <span class="l-kpi-delta text-warning">Active Case Yield 0.26%</span>
+        </div>
+      </div>
+
+      <!-- Prominent Enter Dashboard Action -->
+      <div class="landing-action-zone">
+        <button id="enterDashboardBtn" class="btn-enter-dashboard" title="Enter the interactive SDR workshop dashboard">
+          <span class="btn-enter-text">ENTER WORKSHOP DASHBOARD</span>
+          <span class="btn-enter-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </span>
+        </button>
+
+        <div class="landing-secondary-actions">
+          <button id="jumpProblemTreeBtn" class="btn-ghost-landing">🌳 Problem Tree Analysis</button>
+          <button id="jumpSimulatorBtn" class="btn-ghost-landing">⚡ Acceptance Simulator</button>
+        </div>
+      </div>
+
+      <!-- Landing Footer Notice -->
+      <div class="landing-footer-note">
+        Marie Adelaide Leprosy Centre • Leprosy Control Program • Interactive Epidemiological Intelligence Cockpit
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MAIN DASHBOARD APPLICATION (Revealed after entering)
+       ======================================================================== -->
+  <div id="mainDashboardWrapper" class="dashboard-wrapper">
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+      <div class="nav-container">
+
+        <div class="brand-section">
+          <!-- Return to Slide 1 Landing Button -->
+          <button id="returnToLandingBtn" class="btn-return-landing" title="Return to Slide 1 Cover Page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            <span>Cover Page</span>
+          </button>
+
+          <div class="logo-wrapper">
+            <img src="assets/malc_logo.png" alt="MALC Logo" class="malc-logo" onerror="this.style.display='none';">
+          </div>
+          <div class="brand-meta">
+            <div class="brand-title">MARIE ADELAIDE LEPROSY CENTRE</div>
+            <div class="brand-subtitle">SDR-PEP ACCEPTABILITY &amp; IMPLEMENTATION • SINDH</div>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <!-- Regional Filter Pills -->
+          <div class="region-toggle-group">
+            <button class="region-toggle-btn active" data-region="combined" title="View province-wide combined metrics">
+              All Sindh
+            </button>
+            <button class="region-toggle-btn" data-region="karachi" title="Filter metrics for Karachi Urban Region">
+              Karachi
+            </button>
+            <button class="region-toggle-btn" data-region="interior"
+              title="Filter metrics for Interior Sindh Rural Region">
+              Interior Sindh
+            </button>
+          </div>
+
+          <!-- Interactive Theme Switcher in Header -->
+          <div class="theme-picker-wrapper" id="dashThemePickerWrapper">
+            <button id="themeToggle" class="theme-toggle-trigger dash-theme-trigger" aria-haspopup="true"
+              aria-expanded="false" title="Switch visual theme (Press T to cycle)">
+              <span class="theme-swatch-badge" id="dashThemeSwatch" style="background-color: #2563eb;"></span>
+              <span class="theme-label-group header-theme-labels">
+                <strong class="theme-title-active" id="dashActiveThemeTitle">Pearl</strong>
+              </span>
+              <svg class="theme-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu of Themes -->
+            <div class="theme-dropdown-menu theme-dropdown-right" id="dashThemeMenu" role="menu"
+              aria-label="Visual Themes">
+              <div class="theme-dropdown-header">
+                <span>Select Dashboard Theme</span>
+                <span class="theme-key-hint">Press <strong>T</strong> to cycle</span>
+              </div>
+              <div class="theme-grid-options" id="dashThemeGrid"></div>
+            </div>
+          </div>
+
+          <button id="fullscreenBtn" class="btn btn-outline" title="Toggle Fullscreen Presentation Mode (Press F)">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+            </svg>
+            <span>Present (F)</span>
+          </button>
+
+          <button onclick="window.print()" class="btn btn-primary" title="Export or Print SDR Workshop Brief">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect width="12" height="8" x="6" y="14" />
+            </svg>
+            <span>Print / PDF</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs (EXACT PPT SLIDES) -->
+    <div class="tab-nav-wrapper">
+      <div class="tab-nav-container">
+        <nav class="nav-tabs" role="tablist">
+          <!-- Slide 2 -->
+          <button class="tab-btn active" data-tab="tab-interior" role="tab" aria-selected="true"
+            title="Slide 2: Interior Sindh Data">
+            <span class="tab-badge-num">2</span>
+            <span class="tab-label">Interior Sindh Data</span>
+          </button>
+          <!-- Slide 3 -->
+          <button class="tab-btn" data-tab="tab-karachi" role="tab" aria-selected="false" title="Slide 3: Karachi Data">
+            <span class="tab-badge-num">3</span>
+            <span class="tab-label">Karachi Data</span>
+          </button>
+          <!-- Slide 4 & 5 -->
+          <button class="tab-btn" data-tab="tab-comparison" role="tab" aria-selected="false"
+            title="Slides 4 & 5: Karachi vs Interior Sindh Disparities">
+            <span class="tab-badge-num">4-5</span>
+            <span class="tab-label">Karachi vs Interior Sindh</span>
+          </button>
+          <!-- Slide 6 -->
+          <button class="tab-btn" data-tab="tab-barriers" role="tab" aria-selected="false"
+            title="Slide 6: What Makes SDR Difficult to Accept?">
+            <span class="tab-badge-num">6</span>
+            <span class="tab-label">Acceptance Barriers</span>
+          </button>
+          <!-- Slide 7 -->
+          <button class="tab-btn" data-tab="tab-actions" role="tab" aria-selected="false"
+            title="Slide 7: Practical Actions for MALC Teams">
+            <span class="tab-badge-num">7</span>
+            <span class="tab-label">Practical Actions (6 Pillars)</span>
+          </button>
+          <!-- Slide 8 -->
+          <button class="tab-btn" data-tab="tab-pathway" role="tab" aria-selected="false"
+            title="Slide 8: SDR Implementation Pathway">
+            <span class="tab-badge-num">8</span>
+            <span class="tab-label">Implementation Pathway</span>
+          </button>
+          <!-- Slide 9 -->
+          <button class="tab-btn" data-tab="tab-monitoring" role="tab" aria-selected="false"
+            title="Slide 9: What Should Centers Monitor?">
+            <span class="tab-badge-num">9</span>
+            <span class="tab-label">Center Monitoring</span>
+          </button>
+          <!-- Slide 10 -->
+          <button class="tab-btn" data-tab="tab-problem-tree" role="tab" aria-selected="false"
+            title="Slide 10: Problem Tree Analysis">
+            <span class="tab-badge-num">10</span>
+            <span class="tab-label">Problem Tree Analysis</span>
+          </button>
+          <!-- Slide 11 -->
+          <button class="tab-btn" data-tab="tab-action-plan" role="tab" aria-selected="false"
+            title="Slide 11: Workshop Action Plan">
+            <span class="tab-badge-num">11</span>
+            <span class="tab-label">Workshop Action Plan</span>
+          </button>
+          <!-- Interactive Simulator -->
+          <button class="tab-btn tab-btn-highlight" data-tab="tab-simulator" role="tab" aria-selected="false"
+            title="What-If Acceptance Simulator">
+            <span class="tab-badge-num">⚡</span>
+            <span class="tab-text-full">Acceptance Simulator</span>
+            <span class="tab-text-compact">Simulator</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+      <!-- Dynamic Top KPI Banner (Reflecting Regional Switcher) -->
+      <section class="kpi-grid-container">
+
+        <div class="kpi-card revenue-card">
+          <div class="kpi-header">
+            <span class="kpi-title">CONTACTS SCREENED</span>
+            <span class="kpi-tag success">July 2025 - June 2026</span>
+          </div>
+          <div class="kpi-value-row">
+            <div class="kpi-main-val" id="kpiScreened">41,771</div>
+          </div>
+          <div class="kpi-subtext" id="kpiSubScreened">
+            Across <strong>1,725</strong> index cases (Sindh wide)
+          </div>
+          <div class="kpi-progress-bar">
+            <div class="progress-fill fill-revenue" style="width: 100%;"></div>
+          </div>
+          <div class="kpi-footnote">Karachi: 29,042 (69.5%) | Interior: 12,729 (30.5%)</div>
+        </div>
+
+        <div class="kpi-card surplus-card">
+          <div class="kpi-header">
+            <span class="kpi-title">SDR ACCEPTANCE RATE</span>
+            <span class="kpi-tag success">Prevention Impact</span>
+          </div>
+          <div class="kpi-value-row">
+            <div class="kpi-main-val text-success" id="kpiAcceptance">58.8%</div>
+          </div>
+          <div class="kpi-subtext" id="kpiSubAcceptance">
+            <strong>24,541</strong> total SDR given (90.3% Int vs 44.9% Khi)
+          </div>
+          <div class="kpi-progress-bar">
+            <div class="progress-fill fill-prior" style="width: 58.8%;"></div>
+          </div>
+          <div class="kpi-footnote">Interior Sindh achieved 90.3% acceptance rate</div>
+        </div>
+
+        <div class="kpi-card expenditure-card">
+          <div class="kpi-header">
+            <span class="kpi-title">REFUSAL RATE</span>
+            <span class="kpi-tag alert">Primary Challenge</span>
+          </div>
+          <div class="kpi-value-row">
+            <div class="kpi-main-val text-danger" id="kpiRefusal">18.6%</div>
+          </div>
+          <div class="kpi-subtext" id="kpiSubRefusal">
+            <strong>7,777</strong> refusals (Karachi: 99.0% share)
+          </div>
+          <div class="kpi-progress-bar">
+            <div class="progress-fill fill-expenditure" style="width: 26.5%;"></div>
+          </div>
+          <div class="kpi-footnote">Karachi Refusal (26.5%) vs Interior (0.58%)</div>
+        </div>
+
+        <div class="kpi-card prior-surplus-card">
+          <div class="kpi-header">
+            <span class="kpi-title">LEPROSY SUSPECTS DETECTED</span>
+            <span class="kpi-tag info">Active Case Finding</span>
+          </div>
+          <div class="kpi-value-row">
+            <div class="kpi-main-val text-warning" id="kpiSuspects">109 Cases</div>
+          </div>
+          <div class="kpi-subtext" id="kpiSubSuspects">
+            Total active suspect yield: <strong>0.26%</strong> across province
+          </div>
+          <div class="kpi-progress-bar">
+            <div class="progress-fill fill-prior" style="width: 45%;"></div>
+          </div>
+          <div class="kpi-footnote">Int. Sindh detected 71 suspects (0.55% yield)</div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           TAB 1: INTERIOR SINDH DATA (SLIDE 2)
+           ==================================================================== -->
+      <div id="tab-interior" class="tab-pane active">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDE 2 • PRESENTATION</div>
+          <h3>Interior Sindh: Data Evaluation (July 2025 – June 2026)</h3>
+          <p>Comprehensive contact screening, SDR uptake and suspect detection across rural districts</p>
+        </div>
+
+        <!-- Slide 2 Key Message Highlight Card -->
+        <div class="key-message-card">
+          <div class="key-message-icon">🌿</div>
+          <div class="key-message-body">
+            <h4>Interior Sindh Performance Highlight</h4>
+            <p>
+              Interior Sindh demonstrates exceptional community trust and acceptance: <strong>90.3% (11,490)</strong> of
+              screened contacts received Single-Dose Rifampicin, with a minimal refusal rate of only <strong>0.58% (74
+                cases)</strong>. Crucially, active contact examination yielded <strong>71 leprosy suspects
+                (0.55%)</strong>, illustrating the vital case-finding value of contact screening in rural Sindh.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2-col mt-4">
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Interior Sindh Annual Trends (2025 vs 2026)</h4>
+                <div class="card-desc">SDR Administered vs Refusals vs Active Suspects</div>
+              </div>
+              <div class="header-tools-inline">
+                <button id="toggleInteriorZoomBtn" class="btn btn-sm btn-outline"
+                  title="Zoom into low-value Refusals and Suspects">
+                  <span>🔍 Refusals &amp; Suspects Zoom</span>
+                </button>
+              </div>
+            </div>
+            <div class="chart-container" style="height: 300px;">
+              <canvas id="interiorTrendChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Interior Sindh: Household vs Social Acceptance</h4>
+                <div class="card-desc">High compliance across both household (89.7%) and social contacts (90.6%)</div>
+              </div>
+              <div class="card-badge">Slide 5 Chart 3</div>
+            </div>
+            <div class="chart-container" style="height: 300px;">
+              <canvas id="intSindhMixChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 Exact Data Table -->
+        <div class="dashboard-card mt-6">
+          <div class="card-header">
+            <div>
+              <h4 class="card-title">Interior Sindh Data: July 2025 - June 2026 (Exact Slide 2 Table)</h4>
+              <div class="card-desc">Disaggregated by Household vs Neighbor/Social contacts</div>
+            </div>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Year</th>
+                <th rowspan="2">Index Cases</th>
+                <th rowspan="2">Total Screened</th>
+                <th colspan="4" style="text-align: center; border-left: 2px solid var(--border-subtle);">Household
+                  Contacts (42%)</th>
+                <th colspan="4" style="text-align: center; border-left: 2px solid var(--border-subtle);">Neighbor /
+                  Social Contacts (58%)</th>
+                <th rowspan="2" style="border-left: 2px solid var(--border-subtle);">Prev SDR</th>
+              </tr>
+              <tr>
+                <th style="border-left: 2px solid var(--border-subtle);">Screened</th>
+                <th>Refusal</th>
+                <th>SDR</th>
+                <th>Lep Suspect</th>
+                <th style="border-left: 2px solid var(--border-subtle);">Screened</th>
+                <th>Refusal</th>
+                <th>SDR</th>
+                <th>Lep Suspect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-bold">2025</td>
+                <td class="font-mono">158</td>
+                <td class="font-mono font-bold">6,903</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">2,644</td>
+                <td class="font-mono text-danger">18</td>
+                <td class="font-mono text-success font-bold">2,403</td>
+                <td class="font-mono text-warning">20</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">4,259</td>
+                <td class="font-mono text-danger">43</td>
+                <td class="font-mono text-success font-bold">3,787</td>
+                <td class="font-mono text-warning">16</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">17</td>
+              </tr>
+              <tr>
+                <td class="font-bold">2026</td>
+                <td class="font-mono">158</td>
+                <td class="font-mono font-bold">5,826</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">2,728</td>
+                <td class="font-mono text-danger">07</td>
+                <td class="font-mono text-success font-bold">2,418</td>
+                <td class="font-mono text-warning">21</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">3,098</td>
+                <td class="font-mono text-danger">14</td>
+                <td class="font-mono text-success font-bold">2,882</td>
+                <td class="font-mono text-warning">14</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">165</td>
+              </tr>
+              <tr class="table-total-row highlight-revenue">
+                <td><strong>Total</strong></td>
+                <td class="font-mono font-bold">316</td>
+                <td class="font-mono font-bold">12,729</td>
+                <td class="font-mono font-bold" style="border-left: 2px solid var(--border-subtle);">5,372 (42%)</td>
+                <td class="font-mono font-bold text-danger">25 (0.46%)</td>
+                <td class="font-mono font-bold text-success">4,821 (89.7%)</td>
+                <td class="font-mono font-bold text-warning">41 (0.76%)</td>
+                <td class="font-mono font-bold" style="border-left: 2px solid var(--border-subtle);">7,357 (57.8%)</td>
+                <td class="font-mono font-bold text-danger">57 (0.77%)</td>
+                <td class="font-mono font-bold text-success">6,669 (90.6%)</td>
+                <td class="font-mono font-bold text-warning">30 (0.40%)</td>
+                <td class="font-mono font-bold" style="border-left: 2px solid var(--border-subtle);">182 (1.4%)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="mt-4 p-4" style="background: var(--bg-surface); border-radius: var(--radius-md);">
+            <div class="font-bold text-sm mb-1">Slide 2 Summary Totals:</div>
+            <div class="flex gap-4 flex-wrap" style="display:flex; gap:20px; font-size:0.9rem;">
+              <span>Total Screened: <strong>12,729</strong></span>
+              <span>Total Refusal: <strong class="text-danger">74 (0.58%)</strong></span>
+              <span>Total Leprosy Suspects: <strong class="text-warning">71 (0.55%)</strong></span>
+              <span>Total SDR Given: <strong class="text-success">11,490 (90.3%)</strong></span>
+              <span>Previous SDR: <strong>182 (1.4%)</strong></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 2: KARACHI DATA (SLIDE 3)
+           ==================================================================== -->
+      <div id="tab-karachi" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDE 3 • PRESENTATION</div>
+          <h3>Karachi Data: July 2025 – June 2026</h3>
+          <p>Analysis of high-volume screening and significant urban refusal dynamics</p>
+        </div>
+
+        <div class="key-message-card" style="border-left-color: var(--color-danger);">
+          <div class="key-message-icon">🏙️</div>
+          <div class="key-message-body">
+            <h4>Karachi Urban Challenge</h4>
+            <p>
+              Karachi handles over two-thirds of the provincial caseload with <strong>1,409 index cases</strong> and
+              <strong>29,042 contacts screened</strong>. However, urban centres face an acute refusal barrier:
+              <strong>7,703 contacts declined (26.5%)</strong>, and SDR acceptance was limited to <strong>44.9%
+                (13,051)</strong>. Refusal rates were high across both household contacts (27.7%) and social contacts
+              (25.5%).
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2-col mt-4">
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Karachi Annual Shifts (2025 vs 2026)</h4>
+                <div class="card-desc">SDR Administered vs Refusals vs Previous SDR tracking</div>
+              </div>
+              <div class="card-badge">Slide 3 Trends</div>
+            </div>
+            <div class="chart-container" style="height: 300px;">
+              <canvas id="karachiTrendChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Karachi Household vs Social Acceptance</h4>
+                <div class="card-desc">Substantial refusal in both groups (27.7% HH vs 25.5% Social)</div>
+              </div>
+              <div class="card-badge">Slide 5 Chart 2</div>
+            </div>
+            <div class="chart-container" style="height: 300px;">
+              <canvas id="karachiMixChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 Exact Data Table -->
+        <div class="dashboard-card mt-6">
+          <div class="card-header">
+            <div>
+              <h4 class="card-title">Karachi Data: July 2025 - June 2026 (Exact Slide 3 Table)</h4>
+              <div class="card-desc">Urban caseload, screening yield, and high refusal volume</div>
+            </div>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Year</th>
+                <th rowspan="2">Index Cases</th>
+                <th rowspan="2">Total Screened</th>
+                <th colspan="4" style="text-align: center; border-left: 2px solid var(--border-subtle);">Household
+                  Contacts (46%)</th>
+                <th colspan="4" style="text-align: center; border-left: 2px solid var(--border-subtle);">Neighbor /
+                  Social Contacts (54%)</th>
+                <th rowspan="2" style="border-left: 2px solid var(--border-subtle);">Prev SDR</th>
+              </tr>
+              <tr>
+                <th style="border-left: 2px solid var(--border-subtle);">Screened</th>
+                <th>Refusal</th>
+                <th>SDR</th>
+                <th>Lep Suspect</th>
+                <th style="border-left: 2px solid var(--border-subtle);">Screened</th>
+                <th>Refusal</th>
+                <th>SDR</th>
+                <th>Lep Suspect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-bold">2025</td>
+                <td class="font-mono">751</td>
+                <td class="font-mono font-bold">12,936</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">7,388</td>
+                <td class="font-mono text-danger">2,590</td>
+                <td class="font-mono text-success font-bold">2,953</td>
+                <td class="font-mono text-warning">12</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">5,548</td>
+                <td class="font-mono text-danger">1,788</td>
+                <td class="font-mono text-success font-bold">2,816</td>
+                <td class="font-mono text-warning">05</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">1,230</td>
+              </tr>
+              <tr>
+                <td class="font-bold">2026</td>
+                <td class="font-mono">658</td>
+                <td class="font-mono font-bold">16,106</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">5,986</td>
+                <td class="font-mono text-danger">1,120</td>
+                <td class="font-mono text-success font-bold">2,729</td>
+                <td class="font-mono text-warning">14</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">10,120</td>
+                <td class="font-mono text-danger">2,205</td>
+                <td class="font-mono text-success font-bold">4,553</td>
+                <td class="font-mono text-warning">07</td>
+                <td class="font-mono" style="border-left: 2px solid var(--border-subtle);">1,763</td>
+              </tr>
+              <tr class="table-total-row highlight-expenditure">
+                <td><strong>Total</strong></td>
+                <td class="font-mono font-bold">1,409</td>
+                <td class="font-mono font-bold">29,042</td>
+                <td class="font-mono font-bold" style="border-left: 2px solid var(--border-subtle);">13,374 (46%)</td>
+                <td class="font-mono font-bold text-danger">3,710 (27%)</td>
+                <td class="font-mono font-bold text-success">5,682 (42%)</td>
+                <td class="font-mono font-bold text-warning">26 (0.19%)</td>
+                <td class="font-mono font-bold" style="border-left: 2px solid var(--border-subtle);">15,668 (54%)</td>
+                <td class="font-mono font-bold text-danger">3,993 (25%)</td>
+                <td class="font-mono font-bold text-success">7,369 (47%)</td>
+                <td class="font-mono font-bold text-warning">12 (0.07%)</td>
+                <td class="font-mono font-bold" style="border-left: 2px solid var(--border-subtle);">2,993 (10%)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="mt-4 p-4" style="background: var(--bg-surface); border-radius: var(--radius-md);">
+            <div class="font-bold text-sm mb-1">Slide 3 Summary Totals:</div>
+            <div class="flex gap-4 flex-wrap" style="display:flex; gap:20px; font-size:0.9rem;">
+              <span>Total Screened: <strong>29,042</strong></span>
+              <span>Total Refusal: <strong class="text-danger">7,703 (26.5%)</strong></span>
+              <span>Total Leprosy Suspects: <strong class="text-warning">38 (0.13%)</strong></span>
+              <span>Total SDR Given: <strong class="text-success">13,051 (44.9%)</strong></span>
+              <span>Previous SDR: <strong>2,993 (10.3%)</strong></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 3: KARACHI VS INTERIOR SINDH DISPARITIES (SLIDES 4 & 5)
+           ==================================================================== -->
+      <div id="tab-comparison" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDES 4 &amp; 5 • PRESENTATION</div>
+          <h3>Karachi vs Interior Sindh: Comparative Analysis</h3>
+          <p>Unpacking the 45-fold refusal disparity and structural differences between urban and rural settings</p>
+        </div>
+
+        <div class="grid-2-col">
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Karachi vs Interior Sindh (Slide 4 Chart 1)</h4>
+                <div class="card-desc">Comparative refusal, SDR uptake and suspect rates (%)</div>
+              </div>
+              <div class="header-tools-inline">
+                <button id="toggleOutcomeZoomBtn" class="btn btn-sm btn-outline"
+                  title="Zoom into low values (Refusals and Suspects)">
+                  <span>🔍 Low-Value Zoom (0-30%)</span>
+                </button>
+              </div>
+            </div>
+            <div class="chart-container" style="height: 320px;">
+              <canvas id="outcomeComparisonChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Combined Sindh Outcome Composition</h4>
+                <div class="card-desc">Breakdown of 41,771 evaluated contacts</div>
+              </div>
+              <div class="card-badge">Provincial Overview</div>
+            </div>
+            <div class="chart-container" style="height: 320px;">
+              <canvas id="sindhDistributionChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparative Metric Cards -->
+        <div class="grid-4-col mt-6">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">REFUSAL GAP</span>
+              <span class="disparity-badge badge-danger-glow">45x Disparity</span>
+            </div>
+            <div class="kpi-main-val text-danger">26.5% vs 0.58%</div>
+            <div class="kpi-footnote">99.0% of all refusals occurred in Karachi (7,703 of 7,777)</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">ACCEPTANCE RATIO</span>
+              <span class="disparity-badge badge-success-glow">2x Higher</span>
+            </div>
+            <div class="kpi-main-val text-success">90.3% vs 44.9%</div>
+            <div class="kpi-footnote">Interior Sindh achieved more than double the acceptance rate</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">SUSPECT YIELD</span>
+              <span class="disparity-badge badge-warning-glow">4.2x Yield</span>
+            </div>
+            <div class="kpi-main-val text-warning">0.55% vs 0.13%</div>
+            <div class="kpi-footnote">71 suspects in Interior (12.7k screened) vs 38 in Karachi (29k)</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">PREVIOUS SDR RATE</span>
+              <span class="disparity-badge badge-neutral">Repeat Contacts</span>
+            </div>
+            <div class="kpi-main-val text-primary">10.3% vs 1.4%</div>
+            <div class="kpi-footnote">2,993 repeat contacts in Karachi, showing established outreach</div>
+          </div>
+        </div>
+
+        <!-- Qualitative Drivers of Disparity -->
+        <div class="dashboard-card mt-6">
+          <div class="card-header">
+            <div>
+              <h4 class="card-title">Why the Huge Urban-Rural Gap? (Field Insights)</h4>
+              <div class="card-desc">Contextual determinants shaping community response in Karachi vs Interior Sindh
+              </div>
+            </div>
+          </div>
+          <div class="grid-2-col" style="gap:20px; padding-top:10px;">
+            <div class="p-4"
+              style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: var(--radius-md);">
+              <h5 class="text-danger font-bold mb-2">🏙️ Karachi Urban Complexities</h5>
+              <ul class="bullet-list-lg text-sm">
+                <li><strong>Heightened Stigma &amp; Anonymity:</strong> Fear that neighbours or colleagues identifying a
+                  contact will result in workplace termination or social isolation.</li>
+                <li><strong>Rapid Mobility &amp; Missed Visits:</strong> High daily commuting, factory shifts, and
+                  frequent migration mean contacts are unavailable during standard working hours.</li>
+                <li><strong>Healthy Perception Barrier:</strong> "I feel healthy—why do I need preventive medicine?" is
+                  most prevalent in educated or fast-paced urban populations.</li>
+                <li><strong>Lower Baseline Rapport:</strong> Shorter health-worker visit times leading to transactional
+                  rather than relational counselling.</li>
+              </ul>
+            </div>
+
+            <div class="p-4"
+              style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--radius-md);">
+              <h5 class="text-success font-bold mb-2">🌿 Interior Sindh Facilitators</h5>
+              <ul class="bullet-list-lg text-sm">
+                <li><strong>Enduring Respect for MALC:</strong> Decades of trust built by Dr. Ruth Pfau and legacy
+                  leprosy teams established strong community reverence.</li>
+                <li><strong>Community &amp; Elder Endorsement:</strong> Village elders and family patriarchs participate
+                  directly in health decision-making.</li>
+                <li><strong>Dedicated Home Visits:</strong> Field workers spend considerable time explaining benefits,
+                  answering questions, and building confidence.</li>
+                <li><strong>Active Case Awareness:</strong> Higher direct exposure to endemic leprosy cases increases
+                  perceived risk and willingness to take prophylaxis.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 4: WHAT MAKES SDR DIFFICULT TO ACCEPT? (SLIDE 6)
+           ==================================================================== -->
+      <div id="tab-barriers" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDE 6 • PRESENTATION</div>
+          <h3>1. What makes SDR difficult to accept?</h3>
+          <p>Root barriers identified by MALC field teams across Sindh</p>
+        </div>
+
+        <div class="grid-2-col">
+
+          <div class="assumption-card border-top-blue">
+            <div class="assumption-header">
+              <span class="stream-name">1. Awareness &amp; Understanding</span>
+              <span class="stream-val">Cognitive Barrier</span>
+            </div>
+            <div class="assumption-body">
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-blue); margin-bottom: 8px;">
+                “I feel healthy—why do I need medicine?”
+              </div>
+              <p class="text-sm text-muted">
+                Contacts without symptoms find it counterintuitive to swallow prophylactic medication. Many view
+                medicine strictly as curative rather than protective.
+              </p>
+            </div>
+          </div>
+
+          <div class="assumption-card border-top-red">
+            <div class="assumption-header">
+              <span class="stream-name">2. Fear of Side Effects</span>
+              <span class="stream-val">Safety Anxiety</span>
+            </div>
+            <div class="assumption-body">
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--color-danger); margin-bottom: 8px;">
+                Worry about safety, allergies or other medicines
+              </div>
+              <p class="text-sm text-muted">
+                Anxieties surrounding red-orange urine discoloration, nausea, drug-drug interactions, or potential harm
+                to pregnancy and chronic medical conditions.
+              </p>
+            </div>
+          </div>
+
+          <div class="assumption-card border-top-amber">
+            <div class="assumption-header">
+              <span class="stream-name">3. Stigma &amp; Confidentiality</span>
+              <span class="stream-val">Privacy Vulnerability</span>
+            </div>
+            <div class="assumption-body">
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--color-warning); margin-bottom: 8px;">
+                Concern that the index patient's diagnosis may be revealed
+              </div>
+              <p class="text-sm text-muted">
+                Index patients fear community backlash if health workers visit their home; contacts fear guilt by
+                association if seen accepting medicine.
+              </p>
+            </div>
+          </div>
+
+          <div class="assumption-card border-top-purple">
+            <div class="assumption-header">
+              <span class="stream-name">4. Social-Contact Refusal</span>
+              <span class="stream-val">Social Hesitation</span>
+            </div>
+            <div class="assumption-body">
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--color-purple); margin-bottom: 8px;">
+                Neighbours, friends or colleagues may hesitate
+              </div>
+              <p class="text-sm text-muted">
+                Non-household contacts often do not perceive themselves to be at risk and are reluctant to engage in
+                health screenings on the street or in public.
+              </p>
+            </div>
+          </div>
+
+          <div class="assumption-card border-top-cyan">
+            <div class="assumption-header">
+              <span class="stream-name">5. Availability &amp; Access</span>
+              <span class="stream-val">Operational Barrier</span>
+            </div>
+            <div class="assumption-body">
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--color-info); margin-bottom: 8px;">
+                Work, school, travel, migration or missed visits
+              </div>
+              <p class="text-sm text-muted">
+                Contacts are frequently away during daytime mobile visits; migrant labour movements in industrial zones
+                result in untraceable contacts.
+              </p>
+            </div>
+          </div>
+
+          <div class="assumption-card border-top-slate">
+            <div class="assumption-header">
+              <span class="stream-name">6. Trust &amp; Counselling</span>
+              <span class="stream-val">Communication Gap</span>
+            </div>
+            <div class="assumption-body">
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-muted); margin-bottom: 8px;">
+                Limited time, unclear messages or misconceptions
+              </div>
+              <p class="text-sm text-muted">
+                Rushed field schedules prevent in-depth dialogues. When explanations are hurried or technical, contacts
+                naturally default to refusal.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Cross-cutting slide note -->
+        <div class="slide-bottom-note mt-6">
+          <strong>Slide 6 Cross-Cutting Note:</strong> Also consider family decision-making dynamics (spousal/parental
+          permission required), linguistic diversity across Sindh (Sindhi, Urdu, Pashto, Balochi), and incomplete field
+          documentation.
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 5: PRACTICAL ACTIONS FOR MALC TEAMS (SLIDE 7)
+           ==================================================================== -->
+      <div id="tab-actions" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDE 7 • PRESENTATION</div>
+          <h3>2. Practical actions for MALC teams</h3>
+          <p>Six core operational and clinical commitments for all field centres</p>
+        </div>
+
+        <div class="governance-grid">
+
+          <div class="gov-card">
+            <div class="gov-step">1</div>
+            <div class="gov-content">
+              <h4>Counsel clearly</h4>
+              <p>Explain prevention, benefits, possible side effects (e.g. harmless urine coloration) and when to seek
+                help.</p>
+              <span class="gov-owner">Clear, non-technical verbal &amp; visual explanation</span>
+            </div>
+          </div>
+
+          <div class="gov-card">
+            <div class="gov-step">2</div>
+            <div class="gov-content">
+              <h4>Protect privacy</h4>
+              <p>Never disclose the index patient's diagnosis without explicit authorization. Offer screening under
+                general skin-health checks.</p>
+              <span class="gov-owner">Strict confidentiality safeguards</span>
+            </div>
+          </div>
+
+          <div class="gov-card">
+            <div class="gov-step">3</div>
+            <div class="gov-content">
+              <h4>Respect choice</h4>
+              <p>Obtain informed voluntary consent; do not pressure contacts who decline. Never coerce or shame
+                individuals.</p>
+              <span class="gov-owner">Patient dignity &amp; voluntary participation</span>
+            </div>
+          </div>
+
+          <div class="gov-card">
+            <div class="gov-step">4</div>
+            <div class="gov-content">
+              <h4>Plan follow-up</h4>
+              <p>Arrange a suitable revisit for unavailable contacts; avoid repeated low-priority revisits that exhaust
+                team resources.</p>
+              <span class="gov-owner">Structured revisit timetables</span>
+            </div>
+          </div>
+
+          <div class="gov-card">
+            <div class="gov-step">5</div>
+            <div class="gov-content">
+              <h4>Screen safely</h4>
+              <p>Trained staff assess eligibility (exclude TB, liver disease, pregnancy, allergy) and strictly follow
+                current national/WHO guidance.</p>
+              <span class="gov-owner">Clinical safety &amp; contraindication screening</span>
+            </div>
+          </div>
+
+          <div class="gov-card">
+            <div class="gov-step">6</div>
+            <div class="gov-content">
+              <h4>Record accurately</h4>
+              <p>Document counselling, eligibility, consent/refusal, administration and clinical outcome in standardized
+                field registers.</p>
+              <span class="gov-owner">High-fidelity surveillance records</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Cardinal clinical axiom banner -->
+        <div class="summary-hero-card mt-6" style="border-left: 6px solid var(--accent-blue);">
+          <div class="summary-quote" style="font-size: 1.3rem;">
+            "SDR is prevention for eligible contacts—not treatment for a person who already has leprosy."
+          </div>
+          <p class="mt-2 text-sm text-muted">
+            Any person showing clinical signs of leprosy (skin patches, hypopigmentation, numbness, thickened nerves)
+            must be referred immediately for MDT treatment, NOT given SDR chemoprophylaxis.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 6: SDR IMPLEMENTATION PATHWAY (SLIDE 8)
+           ==================================================================== -->
+      <div id="tab-pathway" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDE 8 • PRESENTATION</div>
+          <h3>3. SDR implementation pathway</h3>
+          <p>Standardized clinical algorithm from contact identification to post-administration surveillance</p>
+        </div>
+
+        <div class="pathway-container">
+
+          <div class="pathway-step">
+            <div class="step-indicator active-step">1</div>
+            <div class="pathway-content-card">
+              <h4 class="font-bold text-base mb-1">Step 1: Identify and counsel close contacts</h4>
+              <p class="text-sm text-muted">
+                With index patient consent, compile a roster of household contacts (shared living quarters >3 months)
+                and close social/neighbour contacts. Introduce preventive health counselling with complete privacy.
+              </p>
+            </div>
+          </div>
+
+          <div class="pathway-step">
+            <div class="step-indicator">2</div>
+            <div class="pathway-content-card">
+              <h4 class="font-bold text-base mb-1">Step 2: Assess eligibility and safety</h4>
+              <p class="text-sm text-muted mb-2">
+                Conduct thorough physical skin inspection and safety screening against WHO/national exclusion criteria:
+              </p>
+              <div class="tag-cloud">
+                <span class="tag">Check for leprosy symptoms</span>
+                <span class="tag">Rule out active Tuberculosis</span>
+                <span class="tag">Screen for liver / jaundice history</span>
+                <span class="tag">Exclude Rifampicin allergy</span>
+                <span class="tag">Verify age (>2 years)</span>
+                <span class="tag">Exclude pregnancy / breastfeeding</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pathway-step">
+            <div class="step-indicator">3</div>
+            <div class="pathway-content-card">
+              <h4 class="font-bold text-base mb-1">Step 3: Decision Node: Eligible and Consents?</h4>
+              <p class="text-sm text-muted">Evaluate the response and route along the appropriate pathway:</p>
+
+              <div class="pathway-branches">
+                <div class="branch-card branch-yes">
+                  <div class="font-bold text-success text-sm mb-1">✅ YES: Consents &amp; Eligible</div>
+                  <p class="text-xs text-muted mb-2">Administer weight-based Single-Dose Rifampicin under direct
+                    observation:</p>
+                  <ul class="text-xs bullet-list-sm">
+                    <li>Adults (≥35 kg): 600 mg</li>
+                    <li>Children (20-34 kg): 450 mg</li>
+                    <li>Children (10-19 kg): 300 mg</li>
+                  </ul>
+                </div>
+
+                <div class="branch-card branch-no">
+                  <div class="font-bold text-danger text-sm mb-1">❌ NO / NOT ELIGIBLE</div>
+                  <p class="text-xs text-muted mb-2">Respect decision immediately; do not administer medication:</p>
+                  <ul class="text-xs bullet-list-sm">
+                    <li>If symptomatic: Refer for full leprosy diagnosis</li>
+                    <li>If contraindicated: Document medical reason</li>
+                    <li>If declined: Document refusal (record reason only if voluntarily shared)</li>
+                  </ul>
+                </div>
+
+                <div class="branch-card branch-wait">
+                  <div class="font-bold text-warning text-sm mb-1">⏳ UNAVAILABLE</div>
+                  <p class="text-xs text-muted mb-2">Contact not present during mobile visit:</p>
+                  <ul class="text-xs bullet-list-sm">
+                    <li>Record in revisit ledger</li>
+                    <li>Agree on a scheduled evening/weekend revisit</li>
+                    <li>Provide satellite clinic voucher if preferred</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pathway-step">
+            <div class="step-indicator">4</div>
+            <div class="pathway-content-card">
+              <h4 class="font-bold text-base mb-1">Step 4: Document outcome</h4>
+              <p class="text-sm text-muted">
+                Record all metrics in MALC register: <strong>eligibility • consent/refusal • SDR given • follow-up
+                  required</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div class="pathway-step">
+            <div class="step-indicator">5</div>
+            <div class="pathway-content-card">
+              <h4 class="font-bold text-base mb-1">Step 5: Review acceptance, coverage and reasons for refusal</h4>
+              <p class="text-sm text-muted">
+                Conduct monthly center-level audits to evaluate coverage trends and refine community counselling
+                approaches.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 7: WHAT SHOULD CENTERS MONITOR? (SLIDE 9)
+           ==================================================================== -->
+      <div id="tab-monitoring" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDE 9 • PRESENTATION</div>
+          <h3>4. What should centers monitor?</h3>
+          <p>Key surveillance indicators to assess program quality and community acceptance</p>
+        </div>
+
+        <div class="grid-2-col">
+
+          <div class="driver-card border-top-blue">
+            <div class="driver-icon bg-blue">📊</div>
+            <div class="driver-content">
+              <div class="driver-title">1. Coverage Rate</div>
+              <div class="driver-amount text-primary font-mono">Contacts screened ÷ contacts identified</div>
+              <p class="driver-summary-text">Measures field outreach completeness. Target: &gt;85% of eligible contacts
+                identified during case investigations.</p>
+            </div>
+          </div>
+
+          <div class="driver-card border-top-green">
+            <div class="driver-icon bg-green">💊</div>
+            <div class="driver-content">
+              <div class="driver-title">2. SDR Acceptance Rate</div>
+              <div class="driver-amount text-success font-mono">Eligible contacts accepting SDR ÷ eligible offered</div>
+              <p class="driver-summary-text">Measures counselling effectiveness. Benchmarks: Interior Sindh achieved
+                90.3%; Karachi urban target is 75%+.</p>
+            </div>
+          </div>
+
+          <div class="driver-card border-top-red">
+            <div class="driver-icon bg-red">🛡️</div>
+            <div class="driver-content">
+              <div class="driver-title">3. Refusal Tracking</div>
+              <div class="driver-amount text-danger font-mono">Accurate, voluntary refusal recording</div>
+              <p class="driver-summary-text">Record refusal without judgment. Inquire and record the underlying reason
+                only if voluntarily shared by the contact.</p>
+            </div>
+          </div>
+
+          <div class="driver-card border-top-orange">
+            <div class="driver-icon bg-orange">🔄</div>
+            <div class="driver-content">
+              <div class="driver-title">4. Follow-up Tracking</div>
+              <div class="driver-amount text-warning font-mono">Traceability &amp; Migration separation</div>
+              <p class="driver-summary-text">Unavailable, untraceable or migrated contacts tracked separately to
+                distinguish true refusals from operational absence.</p>
+            </div>
+          </div>
+
+          <div class="driver-card border-top-indigo">
+            <div class="driver-icon bg-indigo">📋</div>
+            <div class="driver-content">
+              <div class="driver-title">5. Safety &amp; Quality</div>
+              <div class="driver-amount text-indigo font-mono">Eligibility &amp; adverse events log</div>
+              <p class="driver-summary-text">Ensure 100% documentation of pre-dose exclusion screening, batch numbers,
+                weight-based dosing, and any reported adverse events.</p>
+            </div>
+          </div>
+
+          <div class="driver-card border-top-slate">
+            <div class="driver-icon bg-slate">⚖️</div>
+            <div class="driver-content">
+              <div class="driver-title">6. Equity</div>
+              <div class="driver-amount text-slate font-mono">Household vs Social Disaggregation</div>
+              <p class="driver-summary-text">Compare coverage and acceptance across household and social contacts,
+                gender, and age without compromising patient privacy.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="key-message-card mt-6" style="border-left-color: var(--color-success);">
+          <div class="key-message-icon">💡</div>
+          <div class="key-message-body">
+            <h4>Core Program Ethic</h4>
+            <p>
+              <strong>“Use data to improve counselling and access—not to blame contacts or staff.”</strong><br>
+              Refusals reflect systemic communication and stigma challenges, not individual failure. High-fidelity data
+              is our diagnostic tool to design better community support.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 8: PROBLEM TREE ANALYSIS (SLIDE 10)
+           ==================================================================== -->
+      <div id="tab-problem-tree" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDE 10 • PRESENTATION</div>
+          <h3>Problem Tree: Refusal of Contact Screening and SDR-PEP</h3>
+          <p>Comprehensive root cause analysis: from community perceptions to operational bottlenecks</p>
+        </div>
+
+        <div class="problem-tree-wrapper">
+
+          <!-- High-Resolution Embedded Image Container -->
+          <div class="tree-image-container">
+            <img src="assets/sdr_slide10.png" id="problemTreeImg"
+              alt="Problem Tree: Refusal of Contact Screening and SDR"
+              title="Click to view full high-resolution image in new tab">
+            <div class="text-xs text-muted mt-2">
+              🔍 <em>Interactive Diagram from Slide 10: Click image to open in full high-resolution lightbox</em>
+            </div>
+          </div>
+
+          <!-- Structured Interactive Decomposition of Problem Tree -->
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Canopy: Consequences / Effects of Screening &amp; SDR Refusal</h4>
+                <div class="card-desc">The cascading epidemiological outcomes of unaddressed refusal</div>
+              </div>
+            </div>
+            <div class="grid-4-col" style="gap:12px;">
+              <div class="p-3"
+                style="background:rgba(239, 68, 68, 0.08); border-radius:var(--radius-md); border-left:3px solid #ef4444;">
+                <div class="font-bold text-xs text-danger">Low Coverage</div>
+                <div class="text-xs text-muted">Depressed screening &amp; SDR-PEP reach</div>
+              </div>
+              <div class="p-3"
+                style="background:rgba(239, 68, 68, 0.08); border-radius:var(--radius-md); border-left:3px solid #ef4444;">
+                <div class="font-bold text-xs text-danger">Missed Diagnosis</div>
+                <div class="text-xs text-muted">Lost opportunities for early case detection</div>
+              </div>
+              <div class="p-3"
+                style="background:rgba(239, 68, 68, 0.08); border-radius:var(--radius-md); border-left:3px solid #ef4444;">
+                <div class="font-bold text-xs text-danger">Unprotected Contacts</div>
+                <div class="text-xs text-muted">Eligible close contacts remain vulnerable</div>
+              </div>
+              <div class="p-3"
+                style="background:rgba(239, 68, 68, 0.08); border-radius:var(--radius-md); border-left:3px solid #ef4444;">
+                <div class="font-bold text-xs text-danger">Transmission Risk</div>
+                <div class="text-xs text-muted">Continued transmission chain in community</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Root Causes Clusters -->
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Roots: The 5 Underlying Cause Clusters</h4>
+                <div class="card-desc">Target areas for workshop interventions</div>
+              </div>
+            </div>
+
+            <div class="tree-breakdown-grid">
+
+              <div class="tree-cluster-card cluster-community">
+                <div class="font-bold text-sm mb-2 text-primary">1. Community Factors</div>
+                <ul class="bullet-list-sm text-xs text-muted">
+                  <li>Fear of stigma and social discrimination</li>
+                  <li>Lack of general awareness about leprosy</li>
+                  <li>Misconceptions regarding transmission &amp; curability</li>
+                  <li>Fear of being identified as a contact</li>
+                  <li>Prevailing cultural and fatalistic beliefs</li>
+                </ul>
+              </div>
+
+              <div class="tree-cluster-card cluster-trust">
+                <div class="font-bold text-sm mb-2 text-success">2. Trust &amp; Confidentiality</div>
+                <ul class="bullet-list-sm text-xs text-muted">
+                  <li>Fear of disclosure of index patient's identity</li>
+                  <li>Lack of familiar trust in visiting health workers</li>
+                  <li>Fear of being labelled or socially isolated</li>
+                  <li>Privacy concerns during home visits</li>
+                </ul>
+              </div>
+
+              <div class="tree-cluster-card cluster-staff">
+                <div class="font-bold text-sm mb-2" style="color:#8b5cf6;">3. Health Worker Factors</div>
+                <ul class="bullet-list-sm text-xs text-muted">
+                  <li>Inadequate interpersonal counselling skills</li>
+                  <li>Insufficient technical knowledge of SDR-PEP</li>
+                  <li>Failure to explain benefits and harmless side effects</li>
+                  <li>Severe time constraints during busy field rounds</li>
+                </ul>
+              </div>
+
+              <div class="tree-cluster-card cluster-sdr">
+                <div class="font-bold text-sm mb-2" style="color:#06b6d4;">4. SDR Concerns</div>
+                <ul class="bullet-list-sm text-xs text-muted">
+                  <li>Fear of side effects (urine discoloration, nausea)</li>
+                  <li>Reluctance to take pills while feeling healthy</li>
+                  <li>Safety concerns with concurrent medications</li>
+                  <li>Misconception that a single dose cannot protect</li>
+                </ul>
+              </div>
+
+              <div class="tree-cluster-card cluster-ops">
+                <div class="font-bold text-sm mb-2 text-warning">5. Operational Barriers</div>
+                <ul class="bullet-list-sm text-xs text-muted">
+                  <li>Contacts unavailable during daytime visits</li>
+                  <li>Urban migration and untraceable residents</li>
+                  <li>Inconvenient screening timings &amp; locations</li>
+                  <li>Shortage of female health workers for home visits</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 9: WORKSHOP ACTION PLAN (SLIDE 11)
+           ==================================================================== -->
+      <div id="tab-action-plan" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">SLIDE 11 • PRESENTATION</div>
+          <h3>5. Workshop Action Plan &amp; Commitments Matrix</h3>
+          <p>
+            Workshop Objective: <strong>Agree on practical, stigma-sensitive steps to improve informed SDR acceptance
+              and safe delivery.</strong>
+          </p>
+        </div>
+
+        <div class="action-plan-header">
+          <div class="action-filter-pills">
+            <button class="filter-pill active" data-filter="all">All Commitments</button>
+            <button class="filter-pill" data-filter="stigma">Stigma &amp; Privacy</button>
+            <button class="filter-pill" data-filter="counselling">Counselling &amp; IEC</button>
+            <button class="filter-pill" data-filter="operations">Operations &amp; Timing</button>
+            <button class="filter-pill" data-filter="monitoring">Data &amp; Monitoring</button>
+            <button class="filter-pill" data-filter="clinical">Clinical Quality</button>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-muted font-bold" id="actionPlanProgressText">3 of 6 implemented (50%)</span>
+            <button class="btn btn-sm btn-primary" id="openAddActionModalBtn">
+              + Add Center Commitment
+            </button>
+          </div>
+        </div>
+
+        <!-- Action Items List -->
+        <div id="actionItemsContainer">
+          <!-- Dynamically populated from state.actionItems in app.js -->
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB 10: WHAT-IF ACCEPTANCE SIMULATOR
+           ==================================================================== -->
+      <div id="tab-simulator" class="tab-pane">
+
+        <div class="section-lead">
+          <div class="slide-tag">INTERACTIVE STRATEGIC TOOL</div>
+          <h3>What-If Refusal Reduction &amp; Acceptance Simulator</h3>
+          <p>Model the population health impact of closing the Karachi refusal gap</p>
+        </div>
+
+        <div class="grid-2-col">
+
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Intervention Sliders</h4>
+                <div class="card-desc">Adjust community mobilisation targets for Karachi &amp; Sindh</div>
+              </div>
+              <button id="resetSimBtn" class="btn btn-sm btn-outline">Reset Baseline</button>
+            </div>
+
+            <div class="p-4 flex flex-col gap-5" style="display:flex; flex-direction:column; gap:20px;">
+
+              <div>
+                <div class="flex justify-between items-center mb-1"
+                  style="display:flex; justify-content:space-between;">
+                  <label class="font-bold text-sm">Karachi Refusal Reduction Target:</label>
+                  <span class="font-mono font-bold text-primary" id="simRefusalVal">50% reduction</span>
+                </div>
+                <input type="range" id="simRefusalReduction" min="0" max="90" step="5" value="50" style="width:100%;">
+                <div class="text-xs text-muted mt-1">Converts hesitant contacts to acceptors via female mobilizers &amp;
+                  evening visits</div>
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center mb-1"
+                  style="display:flex; justify-content:space-between;">
+                  <label class="font-bold text-sm">Contact Screening Coverage Expansion:</label>
+                  <span class="font-mono font-bold text-success" id="simCoverageVal">+10% screened</span>
+                </div>
+                <input type="range" id="simCoverageBoost" min="0" max="30" step="5" value="10" style="width:100%;">
+                <div class="text-xs text-muted mt-1">Expands tracing of social, workplace and extended contacts</div>
+              </div>
+
+            </div>
+
+            <!-- Calculated Simulated Outputs -->
+            <div class="grid-2-col p-4 mt-2"
+              style="background:var(--bg-surface); border-radius:var(--radius-md); gap:16px;">
+              <div>
+                <div class="text-xs text-muted uppercase font-bold">Additional Contacts Protected</div>
+                <div class="font-mono font-bold text-success text-2xl" id="simAdditionalProtected"
+                  style="font-size:1.6rem;">+5,884</div>
+                <div class="text-xs text-muted">Received preventive SDR chemoprophylaxis</div>
+              </div>
+              <div>
+                <div class="text-xs text-muted uppercase font-bold">Secondary Transmissions Averted</div>
+                <div class="font-mono font-bold text-primary text-2xl" id="simTransmissionsAverted"
+                  style="font-size:1.6rem;">~88</div>
+                <div class="text-xs text-muted">Estimated 2-year prevented cases</div>
+              </div>
+              <div style="grid-column: span 2;">
+                <div class="text-xs text-muted uppercase font-bold">Projected Provincial Acceptance Rate</div>
+                <div class="font-mono font-bold text-warning text-lg" id="simNewAcceptanceRate">68.2% (up from 58.8%)
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div>
+                <h4 class="card-title">Simulated Protection vs Remaining Refusals</h4>
+                <div class="card-desc">Visual comparison: Baseline vs Intervention scenario</div>
+              </div>
+            </div>
+            <div class="chart-container" style="height: 330px;">
+              <canvas id="simImpactChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Add Center Commitment Modal -->
+  <div class="modal-overlay" id="addActionModal">
+    <div class="modal-card">
+      <div class="flex justify-between items-center mb-4"
+        style="display:flex; justify-content:space-between; align-items:center;">
+        <h4 class="font-bold text-base">Add Center Workshop Commitment</h4>
+        <button id="closeActionModalBtn" class="btn btn-sm btn-outline">✕</button>
+      </div>
+
+      <form id="newActionForm" class="flex flex-col gap-3" style="display:flex; flex-direction:column; gap:12px;">
+        <div>
+          <label class="block text-xs font-bold mb-1">Challenge Identified:</label>
+          <input type="text" id="inputChallenge" required class="input-text"
+            placeholder="e.g. Male breadwinners unavailable during daytime visits"
+            style="width:100%; padding:8px; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); background:var(--bg-card); color:var(--text-main);">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold mb-1">Agreed Practical Action:</label>
+          <textarea id="inputAction" required rows="2" class="input-text"
+            placeholder="e.g. Establish Sunday morning clinic slots or clinic voucher pass"
+            style="width:100%; padding:8px; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); background:var(--bg-card); color:var(--text-main);"></textarea>
+        </div>
+
+        <div class="grid-2-col" style="gap:10px;">
+          <div>
+            <label class="block text-xs font-bold mb-1">Responsible Team:</label>
+            <input type="text" id="inputTeam" required class="input-text" placeholder="e.g. Karachi South Outreach Team"
+              style="width:100%; padding:8px; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); background:var(--bg-card); color:var(--text-main);">
+          </div>
+          <div>
+            <label class="block text-xs font-bold mb-1">Timeline:</label>
+            <input type="text" id="inputTimeline" required class="input-text" placeholder="e.g. September 2026"
+              style="width:100%; padding:8px; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); background:var(--bg-card); color:var(--text-main);">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold mb-1">Action Category:</label>
+          <select id="inputCategory" class="select-sm" style="width:100%; padding:8px;">
+            <option value="stigma">Stigma &amp; Privacy</option>
+            <option value="counselling">Counselling &amp; IEC</option>
+            <option value="operations">Operations &amp; Timing</option>
+            <option value="monitoring">Data &amp; Monitoring</option>
+            <option value="clinical">Clinical Quality</option>
+          </select>
+        </div>
+
+        <div class="flex justify-end gap-2 mt-3" style="display:flex; justify-content:flex-end; gap:8px;">
+          <button type="submit" class="btn btn-primary">Save Commitment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

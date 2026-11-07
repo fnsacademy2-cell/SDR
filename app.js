@@ -19,7 +19,7 @@ const SDR_DATA = {
     period: "July 2025 – June 2026"
   },
   interiorSindh: {
-    name: "Interior Sindh",
+    name: "Other parts of Sindh",
     indexCases: { y2025: 158, y2026: 158, total: 316 },
     screened: { y2025: 6903, y2026: 5826, total: 12729 },
     household: {
@@ -97,7 +97,7 @@ const state = {
 const DEFAULT_ACTION_PLAN = [
   {
     id: 1,
-    challenge: "High Refusal in Karachi Urban Centers (26.5% vs 0.58% in Interior Sindh)",
+    challenge: "High Refusal in Karachi Urban Centers (26.5% vs 0.58% in Other parts of Sindh)",
     action: "Deploy trained female community mobilizers and introduce stigma-free household visits during flexible evening hours.",
     team: "Karachi Field Operations & Community Mobilization",
     timeline: "Q3-Q4 2026",
@@ -137,9 +137,9 @@ const DEFAULT_ACTION_PLAN = [
   },
   {
     id: 5,
-    challenge: "High Yield of Leprosy Suspects in Interior Sindh (71 suspects, 0.55%)",
+    challenge: "High Yield of Leprosy Suspects in Other parts of Sindh (71 suspects, 0.55%)",
     action: "Ensure fast-track confirmatory slit-skin smear examination and immediate multi-drug therapy (MDT) initiation for identified suspects.",
-    team: "Interior Regional Medical Officers",
+    team: "Regional Medical Officers (Other parts of Sindh)",
     timeline: "Monthly Audits",
     category: "clinical",
     status: "in_progress",
@@ -210,9 +210,9 @@ function initLandingPage() {
 // Slide navigation array matching PPT sequence
 const SLIDE_TABS = [
   'landing',          // Slide 1 (Cover)
-  'tab-interior',     // Slide 2 (Interior Sindh Data)
+  'tab-interior',     // Slide 2 (Other parts of Sindh Data)
   'tab-karachi',      // Slide 3 (Karachi Data)
-  'tab-comparison',   // Slides 4 & 5 (Karachi vs Interior Sindh)
+  'tab-comparison',   // Slides 4 & 5 (Karachi vs Other parts of Sindh)
   'tab-barriers',     // Slide 6 (Acceptance Barriers)
   'tab-actions',      // Slide 7 (Practical Actions - 6 Pillars)
   'tab-pathway',      // Slide 8 (Implementation Pathway)
@@ -350,45 +350,45 @@ function renderKPIs() {
   if (reg === 'karachi') {
     const k = SDR_DATA.karachi;
     if (kpiScreened) kpiScreened.textContent = k.screened.total.toLocaleString();
-    if (subScreened) subScreened.innerHTML = `From <strong>${k.indexCases.total}</strong> index cases (46% HH / 54% Social)`;
+    if (subScreened) subScreened.innerHTML = `<strong>${k.indexCases.total}</strong> index cases (46% HH / 54% Social)`;
 
     if (kpiAcceptance) kpiAcceptance.textContent = `${k.totalSdr.rate}%`;
-    if (subAcceptance) subAcceptance.innerHTML = `<strong>${k.totalSdr.total.toLocaleString()}</strong> contacts received SDR (Prev: ${k.prevSdr.total})`;
+    if (subAcceptance) subAcceptance.innerHTML = `<strong>${k.totalSdr.total.toLocaleString()}</strong> SDR doses (2,993 had previous SDR)`;
 
     if (kpiRefusal) kpiRefusal.textContent = `${k.totalRefusal.rate}%`;
-    if (subRefusal) subRefusal.innerHTML = `<span class="text-danger">▲ 7,703 contacts declined</span> (99% of Sindh refusals)`;
+    if (subRefusal) subRefusal.innerHTML = `<span class="text-danger">▲ 7,703 declined</span> (99% of Sindh refusals)`;
 
     if (kpiSuspects) kpiSuspects.textContent = `${k.totalLepSuspect.total} cases`;
-    if (subSuspects) subSuspects.innerHTML = `Detection rate: <strong>0.13%</strong> referred for confirmation`;
+    if (subSuspects) subSuspects.innerHTML = `<strong>${k.totalLepSuspect.total}</strong> active suspects (0.13% yield)`;
 
   } else if (reg === 'interior') {
     const i = SDR_DATA.interiorSindh;
     if (kpiScreened) kpiScreened.textContent = i.screened.total.toLocaleString();
-    if (subScreened) subScreened.innerHTML = `From <strong>${i.indexCases.total}</strong> index cases (42% HH / 58% Social)`;
+    if (subScreened) subScreened.innerHTML = `<strong>${i.indexCases.total}</strong> index cases (42% HH / 58% Social)`;
 
     if (kpiAcceptance) kpiAcceptance.textContent = `${i.totalSdr.rate}%`;
-    if (subAcceptance) subAcceptance.innerHTML = `<strong>${i.totalSdr.total.toLocaleString()}</strong> contacts received SDR (High compliance)`;
+    if (subAcceptance) subAcceptance.innerHTML = `<strong>${i.totalSdr.total.toLocaleString()}</strong> SDR doses (High community trust)`;
 
     if (kpiRefusal) kpiRefusal.textContent = `${i.totalRefusal.rate}%`;
-    if (subRefusal) subRefusal.innerHTML = `<span class="text-success">▼ Minimal refusal: only 74 cases</span>`;
+    if (subRefusal) subRefusal.innerHTML = `<span class="text-success">▼ Minimal refusal</span>: only 74 cases (0.58%)`;
 
     if (kpiSuspects) kpiSuspects.textContent = `${i.totalLepSuspect.total} cases`;
-    if (subSuspects) subSuspects.innerHTML = `Yield: <strong>0.55%</strong> active case detection rate`;
+    if (subSuspects) subSuspects.innerHTML = `<strong>${i.totalLepSuspect.total}</strong> active suspects (0.55% yield)`;
 
   } else {
     // Combined Sindh
     const c = SDR_DATA.combinedSindh;
     if (kpiScreened) kpiScreened.textContent = c.screened.toLocaleString();
-    if (subScreened) subScreened.innerHTML = `Across <strong>${c.indexCases.toLocaleString()}</strong> index cases (Sindh wide)`;
+    if (subScreened) subScreened.innerHTML = `<strong>${c.indexCases.toLocaleString()}</strong> index cases across Sindh`;
 
     if (kpiAcceptance) kpiAcceptance.textContent = `${c.sdrRate}%`;
-    if (subAcceptance) subAcceptance.innerHTML = `<strong>${c.totalSdr.toLocaleString()}</strong> total SDR given (90.3% Int vs 44.9% Khi)`;
+    if (subAcceptance) subAcceptance.innerHTML = `<strong>${c.totalSdr.toLocaleString()}</strong> SDR doses (Other parts of Sindh 90.3% vs Khi 44.9%)`;
 
     if (kpiRefusal) kpiRefusal.textContent = `${c.refusalRate}%`;
-    if (subRefusal) subRefusal.innerHTML = `<strong>${c.totalRefusal.toLocaleString()}</strong> refusals (Karachi: 99.0% share)`;
+    if (subRefusal) subRefusal.innerHTML = `<strong>${c.totalRefusal.toLocaleString()}</strong> refusals (99.0% in Karachi)`;
 
     if (kpiSuspects) kpiSuspects.textContent = `${c.totalLepSuspect} cases`;
-    if (subSuspects) subSuspects.innerHTML = `Total active suspect yield: <strong>0.26%</strong> across province`;
+    if (subSuspects) subSuspects.innerHTML = `<strong>${c.totalLepSuspect}</strong> active suspects (0.26% yield)`;
   }
 }
 
@@ -507,8 +507,8 @@ function getDataLabelsConfig(formatType = 'percent') {
     clip: false,
     font: {
       family: "'JetBrains Mono', monospace",
-      weight: '700',
-      size: 11
+      weight: '800',
+      size: 13 // Increased font size for presentation visibility
     },
     color: function() {
       return document.body.classList.contains('theme-dark') ? '#f8fafc' : '#0f172a';
@@ -529,7 +529,7 @@ function getDataLabelsConfig(formatType = 'percent') {
   };
 }
 
-// Slide 4: Karachi vs Interior Sindh Macro Chart
+// Slide 4: Karachi vs Other parts of Sindh Macro Chart
 function initOutcomeComparisonChart() {
   const ctx = document.getElementById('outcomeComparisonChart');
   if (!ctx) return;
@@ -542,14 +542,14 @@ function initOutcomeComparisonChart() {
         {
           label: 'Karachi (Urban)',
           data: [26.5, 44.9, 0.13],
-          backgroundColor: '#ef4444',
+          backgroundColor: '#ea580c', // High-visibility vivid orange (replaces red)
           borderRadius: 6,
           minBarLength: 18 // Ensures low values like 0.13% stay clearly visible to audience
         },
         {
-          label: 'Interior Sindh (Rural)',
+          label: 'Other parts of Sindh',
           data: [0.58, 90.3, 0.55],
-          backgroundColor: '#10b981',
+          backgroundColor: '#0284c7', // High-visibility royal blue (replaces green)
           borderRadius: 6,
           minBarLength: 18 // Ensures low values like 0.58% & 0.55% stay clearly visible
         }
@@ -649,7 +649,7 @@ function initKarachiMixChart() {
   });
 }
 
-// Slide 5: Interior Sindh Household vs Social (Chart 3 from PPT)
+// Slide 5: Other parts of Sindh Household vs Social (Chart 3 from PPT)
 function initIntSindhMixChart() {
   const ctx = document.getElementById('intSindhMixChart');
   if (!ctx) return;
@@ -662,14 +662,14 @@ function initIntSindhMixChart() {
         {
           label: 'Household Contacts',
           data: [89.7, 0.46],
-          backgroundColor: '#10b981',
+          backgroundColor: '#0284c7', // High-visibility royal blue
           borderRadius: 6,
           minBarLength: 20 // Makes 0.46% distinctly visible as a clear bar stub
         },
         {
           label: 'Social / Neighbour Contacts',
           data: [90.6, 0.77],
-          backgroundColor: '#14b8a6',
+          backgroundColor: '#38bdf8', // High-visibility sky blue
           borderRadius: 6,
           minBarLength: 20 // Makes 0.77% distinctly visible
         }
@@ -707,7 +707,7 @@ function initSindhDistributionChart() {
       labels: ['SDR Administered (24,541)', 'Refusals (7,777)', 'Prior SDR Received (3,175)', 'Leprosy Suspects (109)', 'Other / Excluded (6,169)'],
       datasets: [{
         data: [24541, 7777, 3175, 109, 6169],
-        backgroundColor: ['#10b981', '#ef4444', '#f59e0b', '#8b5cf6', '#94a3b8'],
+        backgroundColor: ['#0284c7', '#ea580c', '#f59e0b', '#8b5cf6', '#94a3b8'],
         borderWidth: 2
       }]
     },
@@ -747,14 +747,14 @@ function initTrendCharts() {
           {
             label: 'SDR Given',
             data: [5769, 7282],
-            backgroundColor: '#10b981',
+            backgroundColor: '#0284c7', // Royal blue
             borderRadius: 6,
             minBarLength: 18
           },
           {
             label: 'Refusals',
             data: [4378, 3325],
-            backgroundColor: '#ef4444',
+            backgroundColor: '#ea580c', // Vivid orange
             borderRadius: 6,
             minBarLength: 18
           },
@@ -787,7 +787,7 @@ function initTrendCharts() {
     });
   }
 
-  // Interior Sindh 2025 vs 2026 Trend (With Low-Value Zoom on Refusals & Suspects)
+  // Other parts of Sindh 2025 vs 2026 Trend (With Low-Value Zoom on Refusals & Suspects)
   const ctxI = document.getElementById('interiorTrendChart');
   if (ctxI) {
     state.charts.interiorTrend = new Chart(ctxI, {
@@ -798,14 +798,14 @@ function initTrendCharts() {
           {
             label: 'SDR Given',
             data: [6190, 5300],
-            backgroundColor: '#10b981',
+            backgroundColor: '#0284c7', // Royal blue
             borderRadius: 6,
             minBarLength: 18
           },
           {
             label: 'Refusals',
             data: [61, 21],
-            backgroundColor: '#ef4444',
+            backgroundColor: '#ea580c', // Vivid orange
             borderRadius: 6,
             minBarLength: 20 // Makes 61 & 21 visible even when compared against 6000
           },
@@ -874,14 +874,14 @@ function initSimulatorChart() {
         {
           label: 'Total Protected with SDR',
           data: [24541, 24541],
-          backgroundColor: '#10b981',
+          backgroundColor: '#0284c7', // Royal blue
           borderRadius: 6,
           minBarLength: 18
         },
         {
           label: 'Remaining Refusals',
           data: [7777, 7777],
-          backgroundColor: '#ef4444',
+          backgroundColor: '#ea580c', // Vivid orange
           borderRadius: 6,
           minBarLength: 18
         }
@@ -1061,16 +1061,16 @@ function renderActionItems() {
         </label>
       </div>
       <div>
-        <div class="flex items-center gap-2 mb-1" style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-          <span class="badge badge-neutral text-xs uppercase">${item.category}</span>
-          <span class="badge ${item.completed ? 'badge-success' : 'badge-warning'} text-xs">
+        <div class="flex items-center gap-2 mb-1" style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+          <span class="badge badge-neutral uppercase" style="font-size: 0.82rem;">${item.category}</span>
+          <span class="badge ${item.completed ? 'badge-success' : 'badge-warning'}" style="font-size: 0.82rem;">
             ${item.completed ? 'Completed' : (item.status === 'in_progress' ? 'In Progress' : 'Agreed')}
           </span>
-          <span class="text-xs text-muted font-mono">Timeline: ${item.timeline}</span>
+          <span class="text-muted font-mono" style="font-size: 0.82rem;">Timeline: ${item.timeline}</span>
         </div>
-        <div class="font-bold text-sm mb-1 action-title-text">${item.challenge}</div>
-        <p class="text-xs text-muted mb-2"><strong>Agreed Action:</strong> ${item.action}</p>
-        <div class="text-xs text-muted"><strong>Lead Responsibility:</strong> ${item.team}</div>
+        <div class="font-bold mb-1 action-title-text" style="font-size: 1.15rem; color: var(--text-main);">${item.challenge}</div>
+        <p class="text-muted mb-2" style="font-size: 1rem; line-height: 1.55;"><strong>Agreed Action:</strong> ${item.action}</p>
+        <div class="text-muted" style="font-size: 0.92rem;"><strong>Lead Responsibility:</strong> ${item.team}</div>
       </div>
       <div>
         <button class="btn btn-sm btn-outline text-danger" onclick="deleteActionItem(${item.id})" title="Remove action item">✕</button>

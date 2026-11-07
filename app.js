@@ -393,13 +393,85 @@ function renderKPIs() {
 }
 
 // ==========================================================================
-// 6. Theme Switching System
+// 6. Multi-Theme Executive Presentation System (8 Themes)
 // ==========================================================================
 
 const THEMES = [
-  { id: 'theme-light', title: 'Clean Pearl (Light)', color: '#2563eb' },
-  { id: 'theme-dark', title: 'Midnight Executive (Dark)', color: '#3b82f6' }
+  {
+    id: 'theme-light',
+    title: 'Clean Pearl',
+    desc: 'Executive boardroom crisp white',
+    icon: '☀️',
+    color: '#2563eb',
+    previewBg: '#ffffff',
+    previewBorder: '#cbd5e1'
+  },
+  {
+    id: 'theme-frost',
+    title: 'Nordic Frost',
+    desc: 'Polar clean ice blue & white',
+    icon: '❄️',
+    color: '#0284c7',
+    previewBg: '#f0f9ff',
+    previewBorder: '#bae6fd'
+  },
+  {
+    id: 'theme-dark',
+    title: 'Midnight Executive',
+    desc: 'Deep obsidian dark fintech',
+    icon: '🌙',
+    color: '#3b82f6',
+    previewBg: '#0a0e17',
+    previewBorder: '#3b82f6'
+  },
+  {
+    id: 'theme-navy',
+    title: 'Royal Oceanic',
+    desc: 'Institutional navy & cobalt',
+    icon: '🌊',
+    color: '#0ea5e9',
+    previewBg: '#050c18',
+    previewBorder: '#0ea5e9'
+  },
+  {
+    id: 'theme-emerald',
+    title: 'MALC Emerald',
+    desc: 'Healthcare mission & jade',
+    icon: '🌿',
+    color: '#10b981',
+    previewBg: '#04120b',
+    previewBorder: '#34d399'
+  },
+  {
+    id: 'theme-amber',
+    title: 'Executive Amber',
+    desc: 'Warm espresso & prestige gold',
+    icon: '👑',
+    color: '#f59e0b',
+    previewBg: '#120c06',
+    previewBorder: '#f59e0b'
+  },
+  {
+    id: 'theme-purple',
+    title: 'Luxury Amethyst',
+    desc: 'Regal violet & modern fintech',
+    icon: '🔮',
+    color: '#a855f7',
+    previewBg: '#0c0716',
+    previewBorder: '#a855f7'
+  },
+  {
+    id: 'theme-slate',
+    title: 'Slate Titanium',
+    desc: 'Technical graphite & steel',
+    icon: '⚡',
+    color: '#94a3b8',
+    previewBg: '#0f172a',
+    previewBorder: '#64748b'
+  }
 ];
+
+const ALL_THEME_IDS = THEMES.map(t => t.id);
 
 function initThemeSystem() {
   const landingThemeBtn = document.getElementById('landingThemeBtn');
@@ -407,71 +479,137 @@ function initThemeSystem() {
   const dashThemeBtn = document.getElementById('themeToggle');
   const dashThemeMenu = document.getElementById('dashThemeMenu');
 
-  const saved = localStorage.getItem('malc_sdr_theme_v2') || 'theme-light';
-  applyTheme(saved);
-
   function setupMenu(btn, menu) {
     if (!btn || !menu) return;
+    const wrapper = btn.closest('.theme-picker-wrapper');
+
     btn.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      const open = menu.classList.contains('active');
-      document.querySelectorAll('.theme-dropdown-menu').forEach(m => m.classList.remove('active'));
-      if (!open) menu.classList.add('active');
+
+      const isOpen = wrapper ? wrapper.classList.contains('open') : menu.classList.contains('active');
+
+      // Close all other dropdown menus first
+      document.querySelectorAll('.theme-picker-wrapper').forEach(w => w.classList.remove('open'));
+      document.querySelectorAll('.theme-dropdown-menu').forEach(m => {
+        m.classList.remove('active');
+        m.classList.remove('open');
+      });
+
+      if (!isOpen) {
+        if (wrapper) wrapper.classList.add('open');
+        menu.classList.add('active');
+        menu.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Prevent clicks inside the dropdown menu from closing the menu prematurely
+    menu.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
   }
 
   setupMenu(landingThemeBtn, landingThemeMenu);
   setupMenu(dashThemeBtn, dashThemeMenu);
 
+  // Close menus on click outside
   document.addEventListener('click', () => {
-    document.querySelectorAll('.theme-dropdown-menu').forEach(m => m.classList.remove('active'));
+    document.querySelectorAll('.theme-picker-wrapper').forEach(w => w.classList.remove('open'));
+    document.querySelectorAll('.theme-dropdown-menu').forEach(m => {
+      m.classList.remove('active');
+      m.classList.remove('open');
+    });
+    document.querySelectorAll('.theme-toggle-trigger').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
   });
 
-  // Populate grids
-  ['landingThemeGrid', 'dashThemeGrid'].forEach(gridId => {
-    const grid = document.getElementById(gridId);
-    if (!grid) return;
-    grid.innerHTML = THEMES.map(t => `
-      <button class="theme-item-btn" onclick="applyTheme('${t.id}')">
-        <span class="theme-swatch-badge" style="background-color: ${t.color};"></span>
-        <span>${t.title}</span>
-      </button>
-    `).join('');
+  // Close menus on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.theme-picker-wrapper').forEach(w => w.classList.remove('open'));
+      document.querySelectorAll('.theme-dropdown-menu').forEach(m => {
+        m.classList.remove('active');
+        m.classList.remove('open');
+      });
+      document.querySelectorAll('.theme-toggle-trigger').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+    }
   });
 
-  // 'T' key shortcut
+  // 'T' key shortcut to cycle through all 8 themes
   document.addEventListener('keydown', (e) => {
     if (e.key === 't' || e.key === 'T') {
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
-      const current = document.body.classList.contains('theme-dark') ? 'theme-light' : 'theme-dark';
-      applyTheme(current);
+      const current = localStorage.getItem('malc_sdr_theme_v2') || 'theme-light';
+      const currentIndex = ALL_THEME_IDS.indexOf(current);
+      const nextIndex = (currentIndex + 1) % ALL_THEME_IDS.length;
+      applyTheme(ALL_THEME_IDS[nextIndex]);
     }
   });
+
+  // Apply saved or default theme
+  const saved = localStorage.getItem('malc_sdr_theme_v2') || 'theme-light';
+  applyTheme(saved);
 }
 
 window.applyTheme = function(themeClass) {
-  document.body.classList.remove('theme-light', 'theme-dark');
+  // Strip all theme classes
+  document.body.classList.remove(...ALL_THEME_IDS);
   document.body.classList.add(themeClass);
   localStorage.setItem('malc_sdr_theme_v2', themeClass);
 
-  const title = themeClass === 'theme-dark' ? 'Midnight (Dark)' : 'Clean Pearl (Light)';
-  const color = themeClass === 'theme-dark' ? '#3b82f6' : '#2563eb';
+  const matched = THEMES.find(t => t.id === themeClass) || THEMES[0];
 
   ['landingActiveThemeTitle', 'dashActiveThemeTitle'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.textContent = title;
+    if (el) el.textContent = matched.title;
   });
   ['landingThemeSwatch', 'dashThemeSwatch'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.style.backgroundColor = color;
+    if (el) el.style.backgroundColor = matched.color;
   });
 
-  document.querySelectorAll('.theme-dropdown-menu').forEach(m => m.classList.remove('active'));
+  // Close open dropdowns
+  document.querySelectorAll('.theme-picker-wrapper').forEach(w => w.classList.remove('open'));
+  document.querySelectorAll('.theme-dropdown-menu').forEach(m => {
+    m.classList.remove('active');
+    m.classList.remove('open');
+  });
+  document.querySelectorAll('.theme-toggle-trigger').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+
+  // Re-populate and sync active highlights in all theme menus
+  ['landingThemeGrid', 'dashThemeGrid'].forEach(gridId => {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    grid.innerHTML = THEMES.map(t => {
+      const isActive = t.id === themeClass;
+      return `
+        <button type="button" class="theme-option-card ${isActive ? 'active' : ''}" onclick="applyTheme('${t.id}')">
+          <div class="theme-color-preview" style="background: ${t.previewBg}; border-color: ${t.previewBorder};">
+            <div class="theme-preview-inner" style="background: ${t.color};"></div>
+          </div>
+          <div class="theme-info">
+            <div class="theme-title-row">
+              <span class="theme-name">
+                <span class="theme-icon">${t.icon}</span>
+                <span>${t.title}</span>
+              </span>
+              <span class="theme-active-tag">ACTIVE</span>
+            </div>
+            <div class="theme-desc">${t.desc}</div>
+          </div>
+        </button>
+      `;
+    }).join('');
+  });
 
   // Update chart datalabel contrast on theme switch
-  Object.values(state.charts).forEach(c => {
-    if (c && typeof c.update === 'function') c.update();
-  });
+  if (state && state.charts) {
+    Object.values(state.charts).forEach(c => {
+      if (c && typeof c.update === 'function') c.update();
+    });
+  }
 };
 
 // ==========================================================================
@@ -511,10 +649,12 @@ function getDataLabelsConfig(formatType = 'percent') {
       size: 13 // Increased font size for presentation visibility
     },
     color: function() {
-      return document.body.classList.contains('theme-dark') ? '#f8fafc' : '#0f172a';
+      const isLight = document.body.classList.contains('theme-light') || document.body.classList.contains('theme-frost');
+      return isLight ? '#0f172a' : '#f8fafc';
     },
     backgroundColor: function() {
-      return document.body.classList.contains('theme-dark') ? 'rgba(15, 23, 42, 0.85)' : 'rgba(255, 255, 255, 0.9)';
+      const isLight = document.body.classList.contains('theme-light') || document.body.classList.contains('theme-frost');
+      return isLight ? 'rgba(255, 255, 255, 0.92)' : 'rgba(15, 23, 42, 0.88)';
     },
     borderRadius: 4,
     padding: { top: 2, bottom: 2, left: 5, right: 5 },

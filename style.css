@@ -261,6 +261,72 @@ body.theme-amber {
   --landing-pill-bg: rgba(245, 158, 11, 0.08);
 }
 
+/* 7. Nordic Frost (Clean Polar Ice Light) */
+body.theme-frost {
+  --bg-primary: #f0f9ff;
+  --bg-secondary: #ffffff;
+  --bg-surface: #e0f2fe;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+
+  --border-subtle: #bae6fd;
+  --border-hover: #7dd3fc;
+  --border-accent: rgba(2, 132, 199, 0.5);
+
+  --text-main: #0c4a6e;
+  --text-muted: #0369a1;
+  --text-dim: #38bdf8;
+
+  --accent-blue: #0284c7;
+  --accent-blue-hover: #0369a1;
+  --accent-blue-glow: rgba(2, 132, 199, 0.25);
+
+  --shadow-sm: 0 1px 3px rgba(2, 132, 199, 0.08);
+  --shadow-md: 0 4px 12px rgba(2, 132, 199, 0.12);
+  --shadow-lg: 0 10px 25px rgba(2, 132, 199, 0.15);
+  --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.2);
+
+  --landing-bg: radial-gradient(circle at 50% 15%, #bae6fd 0%, #e0f2fe 45%, #f0f9ff 100%);
+  --landing-glow-1: radial-gradient(ellipse at center, rgba(2, 132, 199, 0.2), transparent 70%);
+  --landing-glow-2: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.15), transparent 70%);
+  --landing-card-bg: rgba(255, 255, 255, 0.9);
+  --landing-pill-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* 8. Slate Titanium (Technical Graphite & Cyber Steel) */
+body.theme-slate {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-surface: #334155;
+  --bg-card: rgba(30, 41, 59, 0.8);
+  --bg-card-hover: rgba(51, 65, 85, 0.9);
+  --bg-glass: rgba(15, 23, 42, 0.9);
+
+  --border-subtle: rgba(148, 163, 184, 0.18);
+  --border-hover: rgba(148, 163, 184, 0.32);
+  --border-accent: rgba(56, 189, 248, 0.5);
+
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
+
+  --accent-blue: #38bdf8;
+  --accent-blue-hover: #0284c7;
+  --accent-blue-glow: rgba(56, 189, 248, 0.35);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.55);
+  --shadow-glow: 0 0 30px rgba(56, 189, 248, 0.25);
+
+  --landing-bg: radial-gradient(circle at 50% 20%, #334155 0%, #1e293b 45%, #0f172a 100%);
+  --landing-glow-1: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.25), transparent 70%);
+  --landing-glow-2: radial-gradient(ellipse at center, rgba(148, 163, 184, 0.15), transparent 70%);
+  --landing-card-bg: rgba(30, 41, 59, 0.7);
+  --landing-pill-bg: rgba(255, 255, 255, 0.08);
+}
+
 /* ==========================================================================
    Base & Reset
    ========================================================================== */
@@ -511,22 +577,26 @@ body.landing-active .dashboard-wrapper {
 }
 
 /* Landing Light Theme Title & Text Overrides */
-body.theme-light .landing-main-title {
+body.theme-light .landing-main-title,
+body.theme-frost .landing-main-title {
   background: linear-gradient(180deg, #0f172a 40%, #334155 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;
 }
 
-body.theme-light .landing-subtitle {
+body.theme-light .landing-subtitle,
+body.theme-frost .landing-subtitle {
   color: #475569;
 }
 
-body.theme-light .landing-org-label {
+body.theme-light .landing-org-label,
+body.theme-frost .landing-org-label {
   color: #0f172a;
 }
 
-body.theme-light .landing-footer-note {
+body.theme-light .landing-footer-note,
+body.theme-frost .landing-footer-note {
   color: #64748b;
 }
 
@@ -964,6 +1034,7 @@ body.theme-light .landing-footer-note {
   position: relative;
   display: inline-block;
   user-select: none;
+  z-index: 100;
 }
 
 .theme-toggle-trigger {
@@ -1081,8 +1152,10 @@ body.theme-light .landing-footer-note {
   left: auto;
 }
 
-.theme-picker-wrapper.open .theme-dropdown-menu {
-  display: flex;
+.theme-picker-wrapper.open .theme-dropdown-menu,
+.theme-dropdown-menu.active,
+.theme-dropdown-menu.open {
+  display: flex !important;
 }
 
 @keyframes themeMenuPop {
@@ -1129,9 +1202,23 @@ body.theme-light .landing-footer-note {
 .theme-grid-options {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  max-height: 380px;
+  gap: 5px;
+  max-height: 420px;
   overflow-y: auto;
+  padding-right: 2px;
+}
+
+.theme-grid-options::-webkit-scrollbar {
+  width: 5px;
+}
+
+.theme-grid-options::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-grid-options::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: var(--radius-full);
 }
 
 /* Individual Theme Option Item */
@@ -1172,6 +1259,19 @@ body.theme-purple .theme-option-card.active {
 
 body.theme-amber .theme-option-card.active {
   background: rgba(245, 158, 11, 0.15);
+}
+
+body.theme-navy .theme-option-card.active {
+  background: rgba(14, 165, 233, 0.15);
+}
+
+body.theme-frost .theme-option-card.active {
+  background: rgba(2, 132, 199, 0.12);
+  border-color: #0284c7;
+}
+
+body.theme-slate .theme-option-card.active {
+  background: rgba(56, 189, 248, 0.15);
 }
 
 .theme-color-preview {
